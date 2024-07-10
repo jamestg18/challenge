@@ -1,0 +1,28 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+input, button {
+    margin: 10px;
+    padding: 10px;
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+footer {
+    /* Elimina la posición absoluta y ajusta el margen superior */
+    margin-top: 20px; /* Ajusta según sea necesario */
+    text-align: center;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encriptador</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo de estilos externo -->
+</head>
+<body>
+    <input type="text" id="inputTexto" placeholder="Ingrese texto a cifrar">
+    <button onclick="cifrar()">Cifrar</button>
+    <button onclick="descifrar()">Descifrar</button>
+    <div id="resultado"></div>
+
+    <button onclick="copiar()">Copiar</button>
+
+    <footer>
+        <p>Creado por [James tascon] - 2024</p>
+    </footer>
+
+    <script>
+        function cifrar() {
+            // Función para cifrar el texto
+            let texto = document.getElementById('inputTexto').value;
+            if (validarTexto(texto)) {
+                // Lógica para cifrar el texto
+                // Puedes implementar tu lógica de cifrado aquí
+                document.getElementById('resultado').innerText = 'Texto cifrado: ' + texto;
+            } else {
+                alert('Ingrese solo letras minúsculas y espacios');
+            }
+        }
+
+        function descifrar() {
+            // Función para descifrar el texto
+            let texto = document.getElementById('inputTexto').value;
+            if (validarTexto(texto)) {
+                // Lógica para descifrar el texto
+                // Puedes implementar tu lógica de descifrado aquí
+                document.getElementById('resultado').innerText = 'Texto descifrado: ' + texto;
+            } else {
+                alert('Ingrese solo letras minúsculas y espacios');
+            }
+        }
+
+        function validarTexto(texto) {
+            const regex = /^[a-z\s]+$/;
+            return regex.test(texto);
+        }
+
+        function copiar() {
+            // Función para copiar el resultado
+            let resultado = document.getElementById('resultado').innerText;
+            navigator.clipboard.writeText(resultado)
+                .then(() => alert('Resultado copiado al portapapeles'))
+                .catch(err => alert('Error al copiar el resultado'));
+        }
+    </script>
+    <script src="script.js"></script> <!-- Enlace al archivo de script externo -->
+</body>
+</html>
